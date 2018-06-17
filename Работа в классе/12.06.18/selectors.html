@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Селекторы</title>
+</head>
+<body>
+
+<div>Привет мир</div>
+<div class="block">Привет CLASS BLOCK</div>
+<div id="football">Привет ID FOOTBALL</div>
+
+<div class="apple box">Элемент с двумя классами</div>
+
+<div class="block">
+	<div class="build"></div>
+</div>
+
+<div class="build">Build</div>
+
+<style>
+	div {
+		color: red;
+	}
+	div {
+		background: green;
+	}
+	div {
+		color: blue;
+	}
+
+	.block {
+		background: orange;
+	}
+
+	#football {
+		color: pink;
+	}
+
+	div {
+		color: yellow;
+	}
+
+	.apple {
+		color: black;
+		background: none;
+		border: 3px solid red;
+	}
+
+	.box {
+		width: 50%;
+	}
+
+	.block .build {
+		background: pink;
+		border: 5px solid;
+		height: 50px;
+		width: 100%;
+	}
+
+	.apple.box {
+		background: grey;
+	}
+
+	.apple , .build, #football {
+		color: white;
+	}
+
+	.orange.football.img .left .box, .clock li li .window.weapon {
+		color: purple;
+	}
+
+</style>
+
+<div class="clock">
+	<ul>
+		<li>
+			<ul>
+				<li>
+					<div class="window weapon">Привет мир</div>
+				</li>
+			</ul>
+		</li>
+	</ul>
+</div>
+
+
+<div class="orange football img">
+	<div class="left">
+		<div class="box"></div>
+	</div>	
+</div>
+
+</body>
+</html>

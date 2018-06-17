@@ -1,0 +1,7 @@
+1) Создать верстку по CSS селектору
+
+.main.block .apple .orange .block { color: orange; }
+
+.temp li li .build.clock { color: green; }
+
+div div .world #block01 { color: purple }
