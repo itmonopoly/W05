@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Align-center</title>
+</head>
+<body>
+
+<div class="parent-apple">
+	<div class="apple"></div>
+</div>
+<br>
+<div class="orange"></div>
+<br>
+<div class="parent-plum">
+	<div class="plum"></div>
+</div>
+<style>
+	.parent-apple {
+		text-align: center;
+	}
+	.apple {
+		width: 100px;
+		height: 100px;
+		background: green;
+		display: inline-block;
+	}
+	.orange {
+		width: 100px;
+		height: 100px;
+		background: orange;
+		margin: 0 auto;
+	}
+	.parent-plum {
+		position: relative;
+		height: 500px;
+		background: yellow;
+	}
+	.plum {
+		width: 100px;
+		height: 100px;
+		background: purple;
+		position: absolute;
+		left: 0;
+		right: 0;
+		top: 0;
+		bottom: 0;
+		margin: auto;
+	}
+</style>
+</body>
+</html>

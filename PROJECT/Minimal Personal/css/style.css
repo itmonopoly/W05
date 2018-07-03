@@ -1,0 +1,161 @@
+body {
+	margin: 0;
+	font-family: 'Poppins', sans-serif;
+}
+
+.main {
+    background: #232227;
+    padding-bottom: 205px;
+}
+
+.container {
+	width: 805px;
+    margin: 0 auto;
+}
+
+.nav {
+    padding-top: 60px;
+    font-size: 14px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: white;
+}
+
+.nav-item {
+	margin-right: 25px;
+	text-decoration: none;
+	color: white;
+}
+
+.info {
+    margin-top: 195px;
+    color: white;
+}
+
+.info-title {
+	font-size: 28px;
+}
+
+.info-caption {
+	font-size: 28px;
+	font-weight: bold;
+}
+
+.info-header {
+	font-size: 50px;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: #fedc01;
+}
+
+.info-buttons {
+	margin-top: 35px;
+}
+
+.info-button {
+	display: inline-block;
+    text-align: center;
+    padding: 8px 0px;
+    width: 120px;
+    font-weight: bold;
+    margin-right: 8px;
+    margin-bottom: 4px;
+    font-size: 12px;
+    border: 1px solid #fedc01;
+    transition: all, .25s;
+}
+
+.info-button:hover {
+	background: #fedc01;
+	color: #232227;
+}
+
+.skills {
+	background: #fedc01;
+    padding-top: 60px;
+    padding-bottom: 50px;
+}
+
+.skills-header {
+    text-align: center;
+    font-size: 40px;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: #232227;
+}
+
+.skills-items {
+    margin-top: 50px;
+}
+
+.skills-item {
+	background: #232227;
+    color: white;
+    font-weight: bold;
+    display: inline-block;
+    padding: 10px 20px;
+    margin-bottom: 4px;
+}
+
+.portfolio {
+	background: #232227;
+    padding-top: 60px;
+    padding-bottom: 50px;
+}
+
+.portfolio-header {
+    text-align: center;
+    font-size: 40px;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: white;
+}
+
+.portfolio-items {
+    margin-top: 50px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.portfolio-item {
+	background: #fedc01;
+	width: 33%;
+	border: 4px solid;
+	box-sizing: border-box;
+	height: 200px;
+    margin-bottom: 4px;
+}
+
+.footer {
+	text-align: center;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+.footer-item {
+    background: #fedc01;
+    color: #232227;
+    padding: 10px 10px;
+    text-decoration: none;
+}
+
+@media (max-width: 900px) {
+	.container {
+	    width: 100%;
+	    padding: 0 50px;
+	    box-sizing: border-box;
+	    margin: 0;
+	}
+
+	.main {
+		padding-bottom: 115px;
+	}
+
+	.info {
+		margin-top: 55px;
+	}
+
+	.portfolio-item {
+		width: 100%;
+	}
+}

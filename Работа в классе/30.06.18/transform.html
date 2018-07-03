@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<div class="apple"></div>
+	<div class="orange"></div>
+	<div class="plum"></div>
+	<div class="cherry"></div>
+
+	<style>
+		.apple, .orange, .plum, .cherry {
+			width: 100px;
+			height: 100px;
+			display: inline-block;
+			transition: all, 1s;
+		}
+		.apple {
+			background: green;
+		}
+		.orange {
+			background: orange;
+		}
+		.plum {
+			background: purple;
+		}
+		.cherry {
+			background: pink;
+		}
+		.apple:hover {
+			transform: rotateZ(360deg);
+		}
+		.orange:hover {
+			transform: scale(1.5);	
+		}
+		.plum:hover {
+			transform: skewX(50deg);
+		}
+		.cherry:hover {
+			transform: translate(50px,50px);
+		}
+	</style>
+</body>
+</html>
