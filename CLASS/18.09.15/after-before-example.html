@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>After before example</title>
+</head>
+<body>
+
+<style>
+	.apple {
+		width: 50px;
+		height: 50px;
+		background: green;
+	}
+
+	.orange {
+		width: 20px;
+		height: 20px;
+		background: orange;
+	}
+
+	.plum {
+		width: 50px;
+		height: 50px;
+		background: purple;
+	}
+
+	.plum:after {
+		content: "";
+		display: block;
+		width: 20px;
+		height: 20px;
+		background: orange;
+	}
+
+	.tomato:after {
+		content:">---";
+	}
+
+	.tomato:before {
+		content: "---<"
+	}
+</style>
+
+<div class="apple">
+	<div class="orange"></div>
+</div>
+
+<div class="plum"></div>
+
+<div class="tomato">Томат</div>
+
+
+
+</body>
+</html>
