@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Vue.js</title>
+</head>
+<body>
+
+<style>
+	.card {
+		width: 100px;
+		height: 100px;
+		border: 1px solid;
+		display: inline-block;
+		transition: all, 1s;
+	}
+	.card:last-child {
+		transform: scale(0);
+	}
+</style>
+
+<div id="app">
+	<input type="range" v-model="range">
+	<div>
+		<shop-window v-for="card in cardsFilter"></shop-window>
+	</div>
+</div>
+
+<script src="vue.min.js"></script>
+<script>
+	Vue.component("shop-window", {
+		template: "<div class='card'><div>"
+	})
+
+	var app = new Vue({
+		el: "#app",
+		data: {
+			range: 0,
+			cards: [
+				{ name: "Apple", value: 10 },
+				{ name: "Orange", value: 20 },
+				{ name: "Plum", value: 30 },
+				{ name: "Tomato", value: 40 },
+				{ name: "Cucumber", value: 50 },
+			],
+			cardsFilter: null
+		},
+		watch: {
+			range: function() {
+				var self = this;
+
+				self.cardsFilter = self.cards.filter(function(item) {
+					if(item.value <= self.range) {
+						return item;
+					}
+				})
+			}
+		}
+
+	})
+</script>
+
+</body>
+</html>

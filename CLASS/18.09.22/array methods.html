@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Array methods</title>
+</head>
+<body>
+
+<script>
+	var fruits = ["apple", "orange", "plum"];
+	var num = [1,2,3,4,5,6,7,8,9,10];
+
+	// forEach ялвляется аналогом for, ничего не возвращает
+	fruits.forEach(function(item, index) {
+		console.log(item, index);
+	})
+
+	// filter возвращает новый массив со значениями, которые подошли под условие
+	var newNum = num.filter(function(item, index) {
+		if(item > 5) {
+			return item
+		}
+	})
+	console.log(newNum); // [6,7,8,9,10]
+
+	// map трансформирует старый массив со значениями, которые подошли под условие
+	var newNum2 = num.map(function(item, index) {
+		if(item  > 5) {
+			return item;
+		}
+	})
+	console.log(newNum2); // [undefined, undefined, undefined, undefined, undefined, 6, 7, 8, 9, 10]
+
+	var newFruit = fruits.map(function(item) {
+		return item.length
+	})
+
+	console.log(newFruit); // [5,6,4]
+</script>
+
+</body>
+</html>

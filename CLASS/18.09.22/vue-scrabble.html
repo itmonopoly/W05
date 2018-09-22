@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Vue.js</title>
+</head>
+<body>
+
+<style>
+	.word {
+		width: 20px;
+		height: 20px;
+		font-size: 20px;
+		text-align: center;
+	}
+</style>
+
+<div id="app">
+	<input v-model="word">
+	<letter v-for="wordItem in wordSplit" v-bind:item="wordItem"></letter>
+</div>
+
+<script src="vue.min.js"></script>
+<script>
+	Vue.component("letter", {
+		props:["item"],
+		template: "<input class='word' v-bind:value='item'>"
+	})
+
+	/*
+	function letter(item) {
+		return "<input class='word' value=" + item + ">";
+	}
+
+	for(var i = 0; i < wordSplit.length; i++) {
+		letter(wordSplit[i]);
+	}
+	*/
+
+	var app = new Vue({
+		el: "#app",
+		data: {
+			word: null,
+			wordSplit: null
+		},
+		watch: {
+			word: function() {
+				this.wordSplit = this.word.split("");
+				console.log(this.wordSplit);
+			}
+		}
+	});
+</script>
+
+</body>
+</html>

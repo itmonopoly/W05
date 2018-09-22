@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Vue.js</title>
+</head>
+<body>
+
+<div id="app">
+	<input v-model="text">
+	<button v-on:click="addTask">+</button>
+	<list v-for="task in tasks" v-bind:item="task"></list>
+</div>
+
+<script src="vue.min.js"></script>
+<script>
+	Vue.component("list", {
+		props:["item"],
+		template: "<div>{{ item }}</div>"
+	})
+
+	var app = new Vue({
+		el: "#app",
+		data: {
+			text: null,
+			tasks: []
+		},
+		methods: {
+			addTask: function() {
+				this.tasks.push(this.text);
+				this.text = null;
+			}
+		}
+	});
+	
+</script>
+
+</body>
+</html>
