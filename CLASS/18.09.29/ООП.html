@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>ООП</title>
+</head>
+<body>
+
+<script>
+	/*
+	класс - это абстракция, которая описывает общие свойста
+	class Animals(n,a) {
+		this.legs = 4;
+		this.head = 1;
+		this.name = n;
+		this.age = a
+		this.say = function(text) {
+			console.log(this.name + ": " + text)
+		}
+	}
+
+	var dog = new Animal("Sharik",65);
+	dog.say("Hola"); // "Sharik: Hola"
+	// {legs:4, head: 1, name: "Sharik", age: 65}
+	*/
+
+	function Animals(n,a) {
+		this.legs = 4;
+		this.head = 1;
+		this.name = n;
+		this.age = a
+		this.say = function(text) {
+			console.log(this.name + ": " + text)
+		};
+	}
+
+	var dog = new Animals("Sharik", 65);
+	var rabbit = new Animals("Banny", 10);
+
+
+	Animals.prototype.color = "black";
+
+	console.log(rabbit)
+	console.log(dog.color)
+	console.log(dog instanceof Animals) // true, dog является экземпляром класса Animals
+	/*
+	Если хотим расширить класс то используем свойство PROTOTYPE
+	*/
+
+	console.log(dog);
+
+	/* Посмотрим иначе на создание объектов */
+	var obj1 = {}
+	var obj2 = new Object()
+	var arr1 = [];
+	var arr2 = new Array();
+	console.log(arr1 instanceof Array) // true
+	console.log(Array instanceof Object) // true
+	console.log("Hello".toUpperCase()) // "HELLO"
+	String.prototype.fruit = function () {
+		return "Бессмысленный текст"
+	}
+	console.log("Hello".fruit()) // "Бессмысленный текст"
+
+	var n = 123.456
+	console.log(n.toFixed()) // "123"
+	console.log(+n.toFixed()) // 123
+
+	Number.prototype.newToFixed = function(n) {
+		if(n == undefined) {
+			return +this.toFixed()
+		} else {
+			return +this.toFixed(n)
+		}
+	}
+
+	console.log(n.newToFixed()); // 123
+	console.log(n.newToFixed(2)); // 123.46
+</script>
+
+</body>
+</html>
+
+
+
+
+
+

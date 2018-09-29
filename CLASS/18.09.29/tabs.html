@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>tabs</title>
+</head>
+<body>
+
+<style>
+	.tabs {
+		width: 500px;
+		margin: 0 auto;
+	}
+	.tabs-links {
+		border-bottom: 1px solid;
+	}
+	.tabs-link {
+		border: 1px solid;
+		display: inline-block;
+		padding: 10px 15px;
+	}
+	.tabs-contents {
+		background: #f8f8f8;
+	}
+	.tabs-content {
+		padding: 10px 15px;
+		display: none;
+	}
+	.active {
+		background: yellow;
+	}
+	.back {
+		padding: 10px 15px;
+	    background: blue;
+	    display: inline-block;
+	    color: white;
+	    cursor: pointer;
+	}
+
+	.hide {
+		display: none;
+	}
+
+	.wide {
+		width: 100%;
+	}
+</style>
+
+<div class="tabs">
+	<div class="tabs-links">
+		<div class="tabs-link" data-link="0">Яблоки</div>
+		<div class="tabs-link" data-link="1">Апельсины</div>
+		<div class="tabs-link" data-link="2">Сливы</div>
+	</div>
+	<div class="back hide">Назад</div>
+	<div class="tabs-contents">
+		<div class="tabs-content">Текст про яблоки</div>
+		<div class="tabs-content">Текст про апельсины</div>
+		<div class="tabs-content">Текст про сливы</div>
+	</div>
+</div>
+
+<script>
+	var link = document.querySelectorAll(".tabs-link");
+	var content = document.querySelectorAll(".tabs-content");
+	var tabs = document.querySelector(".tabs");
+	var parentLinks = document.querySelector(".tabs-links");
+	var back = document.querySelector(".back");
+	var id;
+
+	for(var i = 0; i < link.length; i++) {
+		link[i].addEventListener("click", function() {
+			id = this.getAttribute("data-link");
+
+			for(var j = 0; j < link.length; j++) {
+				link[j].classList.remove("active");
+			}
+
+			this.classList.add("active");
+
+
+			for(var j = 0; j < content.length; j++) {
+				content[j].style.display = "none";
+			}
+
+			content[id].style.display = "block";
+		})
+	}
+
+	for(var i = 0; i < content.length; i++) {
+		content[i].addEventListener("click", function() {
+			tabs.classList.add("wide");
+			parentLinks.classList.add("hide");
+			back.classList.remove("hide");
+		})
+	}
+
+	back.addEventListener("click", function() {
+		tabs.classList.remove("wide");
+		parentLinks.classList.remove("hide");
+		back.classList.add("hide")
+	})
+
+	link[0].click();
+</script>
+
+</body>
+</html>

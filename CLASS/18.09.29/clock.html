@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Clock</title>
+</head>
+<body>
+
+<style>
+	.clock {
+		width: 100px;
+		height: 100px;
+		border: 1px solid;
+		border-radius: 50%;
+		margin: 50px auto;
+		position: relative;
+	}
+
+	.arrow {
+	    position: absolute;
+	    left: 0;
+	    right: 0;
+	    margin: auto;
+	    transform: rotateZ(0deg);
+	    transform-origin: 50% 100%;
+	}
+
+	.hour {
+		width: 10px;
+    	height: 50px;
+    	background: black;
+	}
+
+	.minute {
+	    width: 5px;
+	    height: 50px;
+	    background: blue;
+	}
+
+	.second {
+		width: 1px;
+		height: 50px;
+		background: red;
+	}
+
+	.cap {
+		width: 20px;
+		height: 20px;
+		position: absolute;
+		border-radius: 50%; 
+		left: 0;
+		right: 0;
+		top: 0;
+		bottom: 0;
+		margin: auto;
+		background: black;
+	}
+</style>
+
+<div class="clock">
+	<div class="arrow hour"></div>
+	<div class="arrow minute"></div>
+	<div class="arrow second"></div>
+	<div class="cap"></div>
+</div>
+
+<script>
+	var hour = document.querySelector(".hour");
+	var minute = document.querySelector(".minute");
+	var second = document.querySelector(".second");
+
+	function getTime() {
+		var date = new Date();
+
+		hour.style.transform = "rotateZ(" + date.getHours() * 30 + "deg)";	// "rotateZ(100deg)"
+		minute.style.transform = "rotateZ(" + date.getMinutes() * 6 + "deg)";
+		second.style.transform = "rotateZ(" + date.getSeconds() * 6 + "deg)";
+	}
+
+	setInterval(getTime, 1000);
+</script>
+
+</body>
+</html>
+
+
+
+
+
+
+

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>popup</title>
+</head>
+<body>
+
+<style>
+	.popup {
+		width: 100px;
+		height: 100px;
+		background: green;
+		display: none;
+		position: absolute;
+		left: 0;
+		right: 0;
+		top: 0;
+		bottom: 0;
+		margin: auto;
+	}
+
+	.shadow {
+		background-color: rgba(0,0,0,.5);
+	}
+</style>
+<div class="link">Открыть</div>
+<div class="popup"></div>
+
+<script>
+	var link = document.querySelector(".link");
+	var popup = document.querySelector(".popup");
+
+	link.addEventListener("click", function() {
+		popup.style.display = "block";
+		document.body.classList.add("shadow");
+	})
+
+	popup.addEventListener("click", function() {
+		this.style.display = "none";
+		document.body.classList.remove("shadow");
+	})
+</script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
