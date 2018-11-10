@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>SLIDE LIST</title>
+</head>
+<body>
+
+<div class="list">Яблоки</div>
+<div class="list">Апельсины</div>
+<div class="list">Сливы</div>
+<div class="list">Яблоки</div>
+<div class="list">Апельсины</div>
+<div class="list">Сливы</div>
+<div class="list">Яблоки</div>
+<div class="list">Апельсины</div>
+<div class="list">Сливы</div>
+<div class="list">Яблоки</div>
+<div class="list">Апельсины</div>
+<div class="list">Сливы</div>
+<div class="list">Яблоки</div>
+<div class="list">Апельсины</div>
+<div class="list">Сливы</div>
+<div class="button">Показать еще</div>
+
+<script src="jquery-3.3.1.min.js"></script>
+<script>
+	var list = $(".list");
+	var button = $(".button");
+
+	// splice возращает ввиде массива. Нативный метод javascript'a
+	// $(list.splice(5)).hide();
+	// slice jquery метод. Возвращает коллекцию из элементов аналогично splice только с ними сразу можно работать
+	list.slice(5).hide();
+
+	button.on("click", function() {
+		list.slice(5).slideToggle();
+		if(button.html() == "Показать еще") {
+			button.html("Скрыть")
+		} else {
+			button.html("Показать еще")
+		}
+	})
+</script>
+</body>
+</html>

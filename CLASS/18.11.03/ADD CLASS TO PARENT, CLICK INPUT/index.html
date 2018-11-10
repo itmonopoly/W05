@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>ADD CLASS TO PARENT, CLICK INPUT</title>
+</head>
+<body>
+
+<style>
+	.row-active {
+		background: green;
+		color: white;
+	}
+</style>
+
+<div class="box">
+	<!--<label for="spb" style="width: 100px; height: 100px; background: green; display: block"></label>-->
+
+	<label>
+		<div class="row">
+			<div class="row-caption">Санкт-Петербург</div>
+			<input class="city-input" type="radio" name="delivery" hidden>
+		</div>
+	</label>
+	<label>
+		<div class="row">
+			<div class="row-caption">Москва</div>
+			<input class="city-input" type="radio" name="delivery" hidden>
+		</div>
+	</label>
+	<label>
+		<div class="row">
+			<div class="row-caption">Сызрань</div>
+			<input class="city-input" type="radio" name="delivery" hidden>
+		</div>
+	</label>
+	
+</div>
+
+<script>
+	var cityInput = document.querySelectorAll(".city-input");
+	var row = document.querySelectorAll(".row");
+
+	for(var i = 0; i < cityInput.length; i++) {
+		cityInput[i].addEventListener("change", function() {
+			// Убираем все классы row-active если они есть
+			for(var j = 0; j < row.length; j++) {
+				row[j].classList.remove("row-active");
+			}
+			// Добавляем на родителя класс row-active
+			this.parentElement.classList.add("row-active");
+		})
+	}
+</script>
+
+</body>
+</html>
